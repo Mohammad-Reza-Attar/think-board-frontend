@@ -12,7 +12,7 @@ connectDB().then(() => {
   const port = process.env.PORT || 3001;
 
   app.use(express.json());
-  app.use(cors({ origin: "http://localhost:5173" }));
+  app.use(cors({ origin: ["http://localhost:5173", "http://localhost:5175"] }));
   app.use(rateLimiter);
   app.use("/api/notes", notesRouter);
 
